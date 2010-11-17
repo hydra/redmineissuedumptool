@@ -1,0 +1,60 @@
+h1. Redmine Issue Dump Tool
+
+h2. Author
+
+Dominic Clifton - me@dominicclifton.name
+
+h2. Purpose
+
+Dumps issues from a given project to text files.
+
+h2. Compatibility
+
+Tested only on 1.0.3.
+Tested only with mysql (driver bundled in generated jar file, update pom.xml and supply JDBC connection string to support other DB's)
+Uses 'issues', 'projects' and 'trackers' database tables.
+
+h2. Why?
+
+So you can create a cron-job to run this tool in order to create archives of your user-stories, etc.
+
+h2. Running the tool
+
+If run with the --help parameter the output is as follows:
+
+<pre>
+$ java -jar redmineissuedumptool-1.0.0-jar-with-dependencies.jar --help
+
+RedmineIssueDumpTool v1.0.0 by Dominic Clifton (C) 2010
+Usage:
+--version             Show version information
+--help                Show usage information
+--driver              Set JDBC driver (default: is [com.mysql.jdbc.Driver]
+--url                 Set JDBC connection string (default: is [jdbc:mysql:///redmine?user=redmine]
+--target              Set the target directory (no default, required argument)
+--statistics          Show statistics
+--verbose             Generate verbose output
+</pre>
+
+h2. Building the tool
+
+The tool is built using maven as follows:
+
+<pre>
+mvn clean compile test assembly:assembly
+</pre>
+
+Maven will download all the dependancies, run the unit tests and create a two jar files in the 'target' directory.  To configure the build adjust the pom.xml file.
+
+h2. Source editing in eclipse
+
+The Eclipse project and classpath files can be generated using the maven eclipse plugin via the command:
+
+<pre>
+mvn eclipse:eclipse
+</pre>
+
+h2. References
+
+Redmine - http://www.redmine.org/
+

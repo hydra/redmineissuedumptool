@@ -1,34 +1,3 @@
-/*
-Running the tool:
-
-If run with the --help parameter the output is as follows:
-
-java -jar redmineissuedumptool-1.0.0-jar-with-dependencies.jar --help
-
-RedmineIssueDumpTool v1.0.0 by Dominic Clifton (C) 2010
-Usage:
---version             Show version information
---help                Show usage information
---driver              Set JDBC driver (default: is [com.mysql.jdbc.Driver]
---url                 Set JDBC connection string (default: is [jdbc:mysql:///redmine?user=redmine]
---target              Set the target directory (no default, required argument)
---statistics          Show statistics
---verbose             Generate verbose output
-
-Building the tool:
-
-The tool is built using maven as follows:
-
-mvn clean compile test assembly:assembly
-
-Maven will download all the dependancies, run the unit tests and create a jar file.  To configure the build adjust the pom.xml file.
-
-The eclipse project and classpath file can be generated using the maven eclipse plugin via the command:
-
-mvn eclipse:eclipse
-
-*/
-
 package me.hydra.util.redmine;
 
 import java.io.BufferedWriter;
